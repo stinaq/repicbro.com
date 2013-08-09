@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('repicbroApp', [])
+angular.module('repicbro', ['repicbro.controllers', 'repicbro.services'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -11,3 +11,4 @@ angular.module('repicbroApp', [])
         redirectTo: '/'
       });
   });
+
