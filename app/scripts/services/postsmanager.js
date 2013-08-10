@@ -42,8 +42,8 @@ angular.module('repicbro.services')
           posts.push(p.data);
         });
         current = posts[index];
-        updating = false;
         broadcastCurrentUpdate(current);
+        updating = false;
       });
     };
 
