@@ -1,39 +1,30 @@
 'use strict';
 
 angular.module('repicbro.controllers', ['repicbro.services'])
-  .controller('MainCtrl', function ($scope, $http, Posts) {
+  .controller('MainCtrl', function ($scope, $http, PostsManager) {
     $scope.posts = [];
     $scope.current = null;
     $scope.nsfw = false;
-    $scope.index = 0;
 
-    Posts.get('funny', function (data) {
-      angular.forEach(data.data.children, function (p) {
-        $scope.posts.push(p.data);
-      });
-      $scope.current = $scope.posts[$scope.index];
+    $scope.posts = PostsManager.posts;
+    $scope.current = PostsManager.current;
+    $scope.$on('PostsManager.CurrentUpdate', function (event, post) {
+      $scope.current = post;
     });
+
+    $scope.next = PostsManager.next;
+    $scope.prev = PostsManager.prev;
 
     $scope.isCurrent = function (post) {
       return angular.equals($scope.current, post);
     };
 
     $scope.showNsfw = function () {
-      return !$scope.posts[0].over_18 || $scope.nsfw;
+      return !$scope.current.over_18 || $scope.nsfw;
     };
 
     $scope.toggleNsfw = function () {
       $scope.nsfw = !$scope.nsfw;
-    };
-
-    $scope.next = function () {
-      $scope.index++;
-      $scope.current = $scope.posts[$scope.index];
-    };
-
-    $scope.prev = function () {
-      $scope.index--;
-      $scope.current = $scope.posts[$scope.index];
     };
 
     $(window).keydown(function (e) {
