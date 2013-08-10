@@ -6,11 +6,11 @@ angular.module('repicbro.services')
     var posts = [],
         current = null,
         index = 0,
-        latest = "",
+        latest = '',
         updating = false;
 
     var broadcastCurrentUpdate = function (current) {
-        $rootScope.$broadcast('PostsManager.CurrentUpdate', current);
+      $rootScope.$broadcast('PostsManager.CurrentUpdate', current);
     };
 
     var next = function () {
