@@ -1,8 +1,7 @@
 'use strict';
 
 angular.module('repicbro.controllers')
-  .controller('MainCtrl', function ($scope, $http, PostsManager) {
-    $scope.posts = [];
+  .controller('MainCtrl', function ($scope, PostsManager) {
     $scope.current = null;
     $scope.nsfw = false;
 
