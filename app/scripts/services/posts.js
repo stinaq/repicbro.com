@@ -1,12 +1,12 @@
 'use strict';
 
-angular.module('repicbro.services', [])
-  .factory('Posts', function ($http) {
+angular.module('repicbro.services')
+  .factory('Posts', function ($http, constants) {
     return {
       name: 'Posts Service',
       get: function (subreddit, latest, success, error) {
 
-        var api = 'http://www.reddit.com/r/' + subreddit + '.json';
+        var api = constants.apiPrefix + subreddit + '.json';
 
         var config = {
           method: 'JSONP',

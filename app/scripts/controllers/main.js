@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('repicbro.controllers', ['repicbro.services'])
+angular.module('repicbro.controllers')
   .controller('MainCtrl', function ($scope, $http, PostsManager) {
     $scope.posts = [];
     $scope.current = null;

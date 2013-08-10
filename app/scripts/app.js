@@ -14,3 +14,7 @@ angular.module('repicbro', ['repicbro.controllers',
       });
   });
 
+angular.module('repicbro.controllers', ['repicbro.services']);
+angular.module('repicbro.services', ['repicbro.constants']);
+angular.module('repicbro.constants', []);
+angular.module('repicbro.filters', []);
