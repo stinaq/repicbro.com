@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('repicbro', ['repicbro.controllers', 'repicbro.services'])
+angular.module('repicbro', ['repicbro.controllers',
+                            'repicbro.services',
+                            'repicbro.filters'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

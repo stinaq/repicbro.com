@@ -5,6 +5,7 @@ angular.module('repicbro.services', [])
     return {
       name: 'Posts Service',
       get: function (subreddit, success, error) {
+        
         var api = 'http://reddit.com/r/' + subreddit + '.json';
 
         var config = {
