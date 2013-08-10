@@ -5,27 +5,49 @@ angular.module('repicbro.services')
 
     var posts = [],
         current = null,
-        index = 0;
+        index = 0,
+        latest = "",
+        updating = false;
 
-    Posts.get('funny', function (data) {
-      angular.forEach(data.data.children, function (p) {
-        posts.push(p.data);
-      });
-      current = posts[index];
-      $rootScope.$broadcast('PostsManager.CurrentUpdate', current);
-    });
+    var broadcastCurrentUpdate = function (current) {
+        $rootScope.$broadcast('PostsManager.CurrentUpdate', current);
+    };
 
     var next = function () {
       console.log('next');
+      checkSize();
       current = posts[++index];
-      $rootScope.$broadcast('PostsManager.CurrentUpdate', current);
+      broadcastCurrentUpdate(current);
     };
 
     var prev = function () {
       console.log('prev');
       current = posts[--index];
-      $rootScope.$broadcast('PostsManager.CurrentUpdate', current);
+      broadcastCurrentUpdate(current);
     };
+
+    var checkSize = function () {
+      if (posts.length - index < 50 && !updating) {
+        getPosts();
+      }
+    };
+
+    var getPosts = function () {
+      console.log('Get posts');
+      updating = true;
+      Posts.get('funny', latest, function (data) {
+        latest = data.data.name;
+
+        angular.forEach(data.data.children, function (p) {
+          posts.push(p.data);
+        });
+        current = posts[index];
+        updating = false;
+        broadcastCurrentUpdate(current);
+      });
+    };
+
+    getPosts();
 
     return {
       posts: posts,
