@@ -3,9 +3,9 @@
     <div ng-show="isCurrent(post)">
       <div class="col-lg-8">
         <img ng-src="{{ post.url }}"
-             ng-show"showNsfw(post)"
+             ng-show="showNsfw(post)"
              onerror="this.src='images/404.png';">
-        <img ng-src="images/nsfw.png" ng-hide"showNsfw(post)">
+        <img ng-src="images/nsfw.png" ng-hide="showNsfw(post)">
       </div>
       <div class="col-lg-4">
         <h3>
