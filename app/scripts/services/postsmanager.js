@@ -10,6 +10,33 @@ angular.module('repicbro.services')
         latest = '',
         updating = false;
 
+    var blacklist = [
+      /imgur\.com\/gallery/,
+      /imgur\.com\/a/,
+      /www\.reddit\.com/
+    ];
+
+    var rewritePictureUrl = function (post) {
+      if (post.url.match('^http://imgur')) {
+        post.url = 'http://i.' + post.url.substring(7) + '.jpg';
+      } else if (post.url.match('^http://www.quickmeme.com/meme')) {
+        post.url = 'http://i.qkme.me/' + post.url.match(/[A-Za-z\d]{6}/g)[1] + '.jpg';
+      } else if (post.url.match('^http://qkme.me')) {
+        post.url = 'http://i.qkme.me/' + post.url.match(/[A-Za-z\d]{6}/g)[0] + '.jpg';
+      }
+    };
+
+    var blacklisted = function (post) {
+      var result = false;
+      angular.forEach(blacklist, function (regex) {
+        if (post.url.match(regex)) {
+          result = true;
+        }
+      });
+
+      return result;
+    };
+
     var broadcastCurrentUpdate = function (current) {
       $rootScope.$broadcast('PostsManager.CurrentUpdate', current);
     };
@@ -40,11 +67,14 @@ angular.module('repicbro.services')
     };
 
     var getPosts = function (callback) {
-      console.log('Get posts');
       updating = true;
       Posts.get('funny', latest, function (data) {
         angular.forEach(data.data.children, function (p) {
-          posts.push(p.data);
+          var post = p.data;
+          if (!blacklisted(post)) {
+            rewritePictureUrl(post);
+            posts.push(post);
+          }
         });
 
         latest = posts.slice(-1)[0].name;
