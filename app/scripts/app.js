@@ -9,6 +9,10 @@ angular.module('repicbro', ['repicbro.controllers',
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/r/:subreddit', {
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

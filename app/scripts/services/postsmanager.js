@@ -3,7 +3,8 @@
 angular.module('repicbro.services')
   .factory('PostsManager', function ($rootScope, Posts) {
 
-    var posts = [],
+    var subreddit = 'funny',
+        posts = [],
         loaded = [],
         current = null,
         index = 0,
@@ -68,7 +69,7 @@ angular.module('repicbro.services')
 
     var getPosts = function (callback) {
       updating = true;
-      Posts.get('funny', latest, function (data) {
+      Posts.get(subreddit, latest, function (data) {
         angular.forEach(data.data.children, function (p) {
           var post = p.data;
           if (!blacklisted(post)) {
@@ -88,6 +89,11 @@ angular.module('repicbro.services')
     };
 
     var getPostsInitial = function () {
+      // Make sure the lists are empty
+      loaded.length = 0;
+      posts.length = 0;
+      latest = '';
+
       getPosts(function () {
         _.times(10, function () {
           loaded.push(posts.shift());
@@ -98,12 +104,17 @@ angular.module('repicbro.services')
       });
     };
 
-    getPostsInitial();
+    var initialize = function (r) {
+      subreddit = r || 'funny';
+      console.log(subreddit);
+      getPostsInitial();
+    };
 
     return {
       posts: loaded,
       current: current,
       next: next,
-      prev: prev
+      prev: prev,
+      initialize: initialize
     };
   });
