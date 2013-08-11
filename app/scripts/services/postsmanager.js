@@ -36,12 +36,11 @@ angular.module('repicbro.services')
       console.log('Get posts');
       updating = true;
       Posts.get('funny', latest, function (data) {
-        latest = data.data.name;
-
         angular.forEach(data.data.children, function (p) {
           posts.push(p.data);
         });
         current = posts[index];
+        latest = posts.slice(-1)[0].name;
         broadcastCurrentUpdate(current);
         updating = false;
       });
