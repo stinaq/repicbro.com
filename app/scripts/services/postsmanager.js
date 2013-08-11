@@ -4,6 +4,7 @@ angular.module('repicbro.services')
   .factory('PostsManager', function ($rootScope, Posts) {
 
     var posts = [],
+        loaded = [],
         current = null,
         index = 0,
         latest = '',
@@ -14,15 +15,15 @@ angular.module('repicbro.services')
     };
 
     var next = function () {
-      console.log('next');
-      checkSize();
-      current = posts[++index];
+      current = loaded[++index];
       broadcastCurrentUpdate(current);
+
+      checkSize();
+      maybeLoad();
     };
 
     var prev = function () {
-      console.log('prev');
-      current = posts[--index];
+      current = loaded[--index];
       broadcastCurrentUpdate(current);
     };
 
@@ -32,24 +33,45 @@ angular.module('repicbro.services')
       }
     };
 
-    var getPosts = function () {
+    var maybeLoad = function () {
+      if (loaded.length < index + 10) {
+        loaded.push(posts.shift());
+      }
+    };
+
+    var getPosts = function (callback) {
       console.log('Get posts');
       updating = true;
       Posts.get('funny', latest, function (data) {
         angular.forEach(data.data.children, function (p) {
           posts.push(p.data);
         });
-        current = posts[index];
+
         latest = posts.slice(-1)[0].name;
-        broadcastCurrentUpdate(current);
+
+        if (callback) {
+          callback();
+        }
+
         updating = false;
       });
     };
 
-    getPosts();
+    var getPostsInitial = function () {
+      getPosts(function () {
+        _.times(10, function () {
+          loaded.push(posts.shift());
+        });
+
+        current = loaded[index];
+        broadcastCurrentUpdate(current);
+      });
+    };
+
+    getPostsInitial();
 
     return {
-      posts: posts,
+      posts: loaded,
       current: current,
       next: next,
       prev: prev
