@@ -19,14 +19,13 @@ angular.module('repicbro.services')
     };
 
     var blacklisted = function (post) {
-      var result = false;
       angular.forEach(blacklist, function (regex) {
         if (post.url.match(regex)) {
-          result = true;
+          return true;
         }
       });
 
-      return result;
+      return false;
     };
 
     return {
