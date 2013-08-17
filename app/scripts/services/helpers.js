@@ -1,13 +1,7 @@
 'use strict';
 
 angular.module('repicbro.services')
-  .factory('PostUrlHelper', function () {
-    var blacklist = [
-      /imgur\.com\/gallery/,
-      /imgur\.com\/a/,
-      /www\.reddit\.com/
-    ];
-
+  .factory('Helpers', function (constants) {
     var rewritePictureUrl = function (post) {
       if (post.url.match('^http://imgur')) {
         post.url = 'http://i.' + post.url.substring(7) + '.jpg';
@@ -19,7 +13,7 @@ angular.module('repicbro.services')
     };
 
     var blacklisted = function (post) {
-      angular.forEach(blacklist, function (regex) {
+      angular.forEach(constants.blacklist, function (regex) {
         if (post.url.match(regex)) {
           return true;
         }

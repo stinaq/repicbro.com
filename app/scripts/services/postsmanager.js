@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('repicbro.services')
-  .factory('PostsManager', function ($rootScope, Posts, PostUrlHelper) {
+  .factory('PostsManager', function ($rootScope, Posts, Helpers) {
 
     var subreddit = 'funny',
         posts     = [],
@@ -9,8 +9,7 @@ angular.module('repicbro.services')
         current   = null,
         index     = 0,
         latest    = '',
-        updating  = false,
-        puh       = PostUrlHelper;
+        updating  = false;
 
     var broadcastCurrentUpdate = function (current) {
       $rootScope.$broadcast('PostsManager.CurrentUpdate', current);
@@ -46,8 +45,8 @@ angular.module('repicbro.services')
       Posts.get(subreddit, latest, function (data) {
         angular.forEach(data.data.children, function (p) {
           var post = p.data;
-          if (!puh.blacklisted(post)) {
-            puh.rewritePictureUrl(post);
+          if (!Helpers.blacklisted(post)) {
+            Helpers.rewritePictureUrl(post);
             posts.push(post);
           }
         });
