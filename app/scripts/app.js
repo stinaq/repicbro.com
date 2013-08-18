@@ -2,7 +2,9 @@
 
 angular.module('repicbro', ['repicbro.controllers',
                             'repicbro.services',
-                            'repicbro.filters'])
+                            'repicbro.filters',
+                            'ngRoute',
+                            'ngTouch'])
   .config(function ($routeProvider, constants) {
     $routeProvider
       .when('/', {
