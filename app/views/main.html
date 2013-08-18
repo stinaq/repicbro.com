@@ -11,7 +11,7 @@
         <h3>
           <a target="_blank"
              ng-href="{{ post | permalink }}"
-             ng-bind-html-unsafe="post.title">
+             ng-bind-html="trustedHtml(post)">
           </a>
         </h3>
       </div>

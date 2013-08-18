@@ -5,6 +5,7 @@ angular.module('repicbro.controllers')
               function ($scope,
                         $routeParams,
                         $location,
+                        $sce,
                         PostsManager,
                         Subreddits) {
 
@@ -32,6 +33,10 @@ angular.module('repicbro.controllers')
 
     $scope.toggleNsfw = function () {
       $scope.nsfw = !$scope.nsfw;
+    };
+
+    $scope.trustedHtml = function (post) {
+      return $sce.trustAsHtml(post.title);
     };
 
     $(window).keydown(function (e) {
