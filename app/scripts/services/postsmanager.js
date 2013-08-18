@@ -54,7 +54,7 @@ angular.module('repicbro.services')
           }
         });
 
-        latest = posts.slice(-1)[0].name;
+        latest = _.last(posts).name;
 
         if (callback) {
           callback();
