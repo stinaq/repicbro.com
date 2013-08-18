@@ -3,11 +3,10 @@
 angular.module('repicbro', ['repicbro.controllers',
                             'repicbro.services',
                             'repicbro.filters'])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, constants) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        redirectTo: '/r/' + constants.subreddits[0]
       })
       .when('/r/:subreddit', {
         templateUrl: 'views/main.html',
