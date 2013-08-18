@@ -5,7 +5,7 @@ angular.module('repicbro.constants')
     'apiPrefix' : 'http://www.reddit.com/r/',
     'blacklist': [
       /imgur\.com\/gallery/,
-      /imgur\.com\/a/,
+      /imgur\.com\/a\//,
       /www\.reddit\.com/
     ],
     'subreddits': [
