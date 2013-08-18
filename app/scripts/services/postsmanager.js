@@ -1,7 +1,10 @@
 'use strict';
 
 angular.module('repicbro.services')
-  .factory('PostsManager', function ($rootScope, Posts, Helpers) {
+  .factory('PostsManager',
+           function ($rootScope,
+                     Posts,
+                     Helpers) {
 
     var subreddit = 'funny',
         posts     = [],
@@ -78,8 +81,7 @@ angular.module('repicbro.services')
     };
 
     var initialize = function (r) {
-      subreddit = r || 'funny';
-      console.log(subreddit);
+      subreddit = r;
       getPostsInitial();
     };
 

@@ -1,12 +1,25 @@
 'use strict';
 
 angular.module('repicbro.controllers')
-  .controller('MainCtrl', function ($scope, $routeParams, PostsManager) {
+  .controller('MainCtrl',
+              function ($scope,
+                        $routeParams,
+                        PostsManager,
+                        Subreddits) {
     $scope.current = null;
     $scope.nsfw = false;
-    var subreddit = $routeParams['subreddit'];
 
-    PostsManager.initialize(subreddit);
+    if ($routeParams.subreddit) {
+      Subreddits.updateCurrent($routeParams.subreddit);
+    }
+
+    $scope.subreddit = Subreddits.current;
+    $scope.$on('Subreddits.CurrentUpdate', function (event, subreddit) {
+      $scope.subreddit = subreddit;
+      PostsManager.initialize(subreddit);
+    });
+
+    PostsManager.initialize($scope.subreddit);
     $scope.posts = PostsManager.posts;
     $scope.current = PostsManager.current;
     $scope.$on('PostsManager.CurrentUpdate', function (event, post) {

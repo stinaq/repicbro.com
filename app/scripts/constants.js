@@ -7,5 +7,10 @@ angular.module('repicbro.constants')
       /imgur\.com\/gallery/,
       /imgur\.com\/a/,
       /www\.reddit\.com/
+    ],
+    'subreddits': [
+      'funny',
+      'pics',
+      'gifs'
     ]
   });
