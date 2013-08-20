@@ -5,7 +5,7 @@ angular.module('repicbro.services')
     return {
       name: 'Posts Service',
       timeout: null,
-      get: function (subreddit, latest, success, error) {
+      get: function (subreddit, latest, success) {
         if (this.timeout) {
           this.timeout.resolve();
         }
