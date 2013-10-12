@@ -1,13 +1,38 @@
+// ======================================
+//         VARIABLES
+// ======================================
+
+$background-gray:               #262626;
+$text-color:                    #F2F2F2;
+
+
+
 body {
-  background: #fafafa;
+  background: $background-gray;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
 }
 
-img {
-  max-width: 100%;
+.repicbro-nav-select{
+  width: 200px;
+  margin-top: 7px;
 }
 
-.content {
-  margin-top: 60px;
+.repicbro-title{
+  text-align: center;
+  a{
+    color: $text-color;
+    &:hover{
+      text-decoration: none;
+      color: darken($text-color, 20);
+    }
+  }
 }
+
+img.repicbro-image{
+  margin: 0 auto 40px auto;
+  display: block;
+  max-width: 935px;
+}
+
+
