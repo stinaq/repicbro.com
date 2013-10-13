@@ -49,28 +49,10 @@
       </div>
     </nav>
 
-    <div class="container content" ng-view=""></div>
+    <!-- Include modal for 'about' info -->
+    <div ng-include=" '/views/modal-about.html' "></div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title">How does repicbro work</h4>
-          </div>
-          <div class="modal-body">
-            <p>
-              You can actually view pictures from any subreddit here on Reddit Picture Browser.
-              <br><br>
-              No, really!<br><br>
-              Just change the end of the url so that it says /r/yourfavouritesubreddit<br>
-              A personal favourite is <a href="http://repicbro.com/r/minecraft">repicbro.com/r/minecraft</a>!
-            </p>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+    <div class="container content" ng-view=""></div>
 
     <script src="/bower_components/jquery/jquery.js"></script>
     <script src="/bower_components/angular/angular.js"></script>
