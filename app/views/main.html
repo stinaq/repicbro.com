@@ -1,19 +1,22 @@
-<div id="content" class="container">
+<div class="container repicbro-main-container">
   <div class="row" ng-repeat="post in posts">
     <div ng-show="isCurrent(post)">
-      <div class="col-lg-8">
-        <img ng-src="{{ post.url }}"
-             ng-show="showNsfw(post)"
-             onerror="this.src='images/404.png';">
-        <img ng-src="images/nsfw.png" ng-hide="showNsfw(post)">
-      </div>
-      <div class="col-lg-4">
+      <div class="col-md-12 repicbro-title">
         <h3>
           <a target="_blank"
              ng-href="{{ post | permalink }}"
              ng-bind-html="trustedHtml(post)">
           </a>
         </h3>
+      </div>
+      <div class="col-md-12">
+        <div class="repicbro-image">
+          <img class="repicbro-image"
+               ng-src="{{ post.url }}"
+               ng-show="showNsfw(post)"
+               onerror="this.src='images/404.png';">
+          <img ng-src="images/nsfw.png" ng-hide="showNsfw(post)">
+        </div>
       </div>
     </div>
   </div>
