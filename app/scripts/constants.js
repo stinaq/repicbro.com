@@ -11,6 +11,10 @@ angular.module('repicbro.constants')
     'subreddits': [
       'funny',
       'pics',
-      'gifs'
+      'gifs',
+      'aww',
+      'earthporn',
+      'adviceanimals',
+      'minecraft'
     ]
   });
