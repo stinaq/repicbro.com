@@ -29,12 +29,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#">The one app for your Reddit Picture Browsing</a></li>
+            <li><a href="">The one app for your Reddit Picture Browsing</a></li>
             <li class="dropdown">
-              <a href="" class="dropdown-toggle" data-toggle="dropdown">How works?<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Stuffs about the app</a></li>
-              </ul>
+              <a data-toggle="modal" href="#aboutModal">How works?</a>
             </li>
           </ul>
 
@@ -52,6 +49,28 @@
 
 
     <div class="container content" ng-view=""></div>
+
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">How does repicbro work</h4>
+          </div>
+          <div class="modal-body">
+            <p>
+              A short text about repicbro
+            </p>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
 
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
