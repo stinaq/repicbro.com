@@ -6,6 +6,9 @@ $background-gray:               #262626;
 $text-color:                    #F2F2F2;
 
 
+// ======================================
+//         CUSTOM
+// ======================================
 
 body {
   background: lighten($background-gray,3);
@@ -46,7 +49,7 @@ body {
 img.repicbro-image{
   margin: 0 auto 40px auto;
   display: block;
-  max-width: 935px;
+  max-width: 910px;
   border: 4px solid lighten($background-gray, 80);
   -webkit-box-shadow: 0px 0px 55px -7px rgba(0,0,0,0.8);
   -moz-box-shadow: 0px 0px 55px -7px rgba(0,0,0,0.8);
