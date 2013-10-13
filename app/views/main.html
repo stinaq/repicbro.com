@@ -14,8 +14,8 @@
           <img class="repicbro-image"
                ng-src="{{ post.url }}"
                ng-show="showNsfw(post)"
-               onerror="this.src='images/404.png';">
-          <img ng-src="images/nsfw.png" ng-hide="showNsfw(post)">
+               onerror="this.src='/images/404.png';">
+          <img ng-src="/images/nsfw.png" ng-hide="showNsfw(post)">
         </div>
       </div>
     </div>

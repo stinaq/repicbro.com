@@ -19,7 +19,14 @@ body {
 
 .repicbro-nav-select{
   width: 200px;
-  margin-top: 7px;
+  margin-top: 10px;
+}
+
+.navbar-inverse .navbar-nav > li > a.repicbro-link-thats-not-a-link{
+  cursor: default;
+  &:hover{
+    color: #999;
+  }
 }
 
 .repicbro-title{
