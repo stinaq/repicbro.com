@@ -7,6 +7,7 @@ angular.module('repicbro.controllers')
                         $location,
                         $sce,
                         PostsManager,
+                        NsfwManager,
                         Subreddits) {
 
     $scope.subreddit = Subreddits.updateCurrent($routeParams.subreddit);
@@ -27,13 +28,15 @@ angular.module('repicbro.controllers')
       return angular.equals($scope.current, post);
     };
 
+    $scope.$on('NsfwManager.Update', function (event, nsfw) {
+      $scope.nsfw = nsfw;
+    });
+
     $scope.showNsfw = function () {
       return !$scope.current.over_18 || $scope.nsfw;
     };
 
-    $scope.toggleNsfw = function () {
-      $scope.nsfw = !$scope.nsfw;
-    };
+    $scope.toggleNsfw = NsfwManager.toggleNsfw;
 
     $scope.trustedHtml = function (post) {
       return $sce.trustAsHtml(post.title);
