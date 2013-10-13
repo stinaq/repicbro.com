@@ -78,7 +78,10 @@ img.repicbro-image{
   }
 }
 
-.nsfw-on{
+.nav > li .nsfw-on{
   text-decoration: underline;
+  &:hover, &:active{
+    text-decoration: underline;
+  }
 }
 

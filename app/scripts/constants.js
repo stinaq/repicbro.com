@@ -16,6 +16,7 @@ angular.module('repicbro.constants')
       'aww',
       'earthporn',
       'adviceanimals',
-      'minecraft'
+      'minecraft',
+      'perfectloops'
     ]
   });
