@@ -26,6 +26,13 @@ body {
   background: $background-gray;
   color: darken($text-color, 20);
   border-color: lighten($background-gray, 30);
+
+}
+
+@media (max-width: 767px){
+  .repicbro-nav-select{
+    margin-left: 13px;
+  }
 }
 
 .navbar-inverse .navbar-nav > li > a.repicbro-link-thats-not-a-link{
@@ -54,6 +61,21 @@ img.repicbro-image{
   -webkit-box-shadow: 0px 0px 55px -7px rgba(0,0,0,0.8);
   -moz-box-shadow: 0px 0px 55px -7px rgba(0,0,0,0.8);
   box-shadow: 0px 0px 55px -7px rgba(0,0,0,0.8);
+}
+
+@media (max-width: 767px) {
+  img.repicbro-image {
+    max-width: 95%;
+  }
+}@media (min-width: 768px) {
+  img.repicbro-image {
+    max-width: 690px;
+  }
+}
+@media (min-width: 992px) {
+  img.repicbro-image {
+    max-width: 910px;
+  }
 }
 
 .nsfw-on{
