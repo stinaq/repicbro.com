@@ -20,6 +20,9 @@ body {
 .repicbro-nav-select{
   width: 200px;
   margin-top: 10px;
+  background: $background-gray;
+  color: darken($text-color, 20);
+  border-color: lighten($background-gray, 30);
 }
 
 .navbar-inverse .navbar-nav > li > a.repicbro-link-thats-not-a-link{
