@@ -6,7 +6,8 @@ angular.module('repicbro.constants')
     'blacklist': [
       /imgur\.com\/gallery/,
       /imgur\.com\/a\//,
-      /www\.reddit\.com/
+      /www\.reddit\.com/,
+      /www\.flickr\.com/
     ],
     'subreddits': [
       'funny',
