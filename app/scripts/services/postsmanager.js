@@ -38,7 +38,6 @@ angular.module('repicbro.services')
       });
     };
 
-
     var prev = function () {
       updateIndex(index-1);
     };
