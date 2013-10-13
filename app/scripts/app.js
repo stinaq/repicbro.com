@@ -5,13 +5,14 @@ angular.module('repicbro', ['repicbro.controllers',
                             'repicbro.filters',
                             'ngRoute',
                             'ngTouch'])
-  .config(function ($routeProvider, constants) {
+  .config(function ($routeProvider, $locationProvider, constants) {
+    $locationProvider.html5Mode(true);
     $routeProvider
       .when('/', {
         redirectTo: '/r/' + constants.subreddits[0]
       })
       .when('/r/:subreddit', {
-        templateUrl: 'views/main.html',
+        templateUrl: '/views/main.html',
         controller: 'MainCtrl'
       })
       .otherwise({
