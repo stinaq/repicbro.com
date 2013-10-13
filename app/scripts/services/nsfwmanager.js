@@ -17,6 +17,7 @@ angular.module('repicbro.services')
     };
 
     return {
-      toggleNsfw: toggleNsfw
+      toggleNsfw: toggleNsfw,
+      nsfw: _nsfw
     };
   });

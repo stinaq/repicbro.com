@@ -7,10 +7,11 @@ angular.module('repicbro.controllers')
                         $location,
                         $sce,
                         PostsManager,
+                        NsfwManager,
                         Subreddits) {
 
     $scope.subreddit = Subreddits.updateCurrent($routeParams.subreddit);
-    $scope.nsfw = false;
+    $scope.nsfw = NsfwManager.nsfw;
 
     PostsManager.initialize($scope.subreddit);
     $scope.posts = PostsManager.posts;
@@ -49,7 +50,7 @@ angular.module('repicbro.controllers')
         $scope.$apply();
       }
       else if (e.which === 78) {
-        $scope.toggleNsfw();
+        NsfwManager.toggleNsfw();
         $scope.$apply();
       }
     });
