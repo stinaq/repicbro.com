@@ -1,7 +1,11 @@
 'use strict';
 
 angular.module('repicbro.controllers')
-  .controller('NavigationCtrl', function ($scope, $location, Subreddits) {
+  .controller('NavigationCtrl',
+              function ($scope,
+                        $location,
+                        NsfwManager,
+                        Subreddits) {
     $scope.subreddits = Subreddits.list;
     $scope.subreddit = Subreddits.current;
     $scope.$on('Subreddits.CurrentUpdate', function (event, subreddit) {
@@ -12,4 +16,10 @@ angular.module('repicbro.controllers')
       Subreddits.updateCurrent($scope.subreddit);
       $location.path('/r/' + $scope.subreddit);
     };
+
+    $scope.$on('NsfwManager.Update', function (event, nsfw) {
+      $scope.nsfw = nsfw;
+    });
+
+    $scope.toggleNsfw = NsfwManager.toggleNsfw;
   });

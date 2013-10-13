@@ -6,13 +6,14 @@ angular.module('repicbro.services')
 
     var _nsfw = false;
 
-    var broadcastNsfw = function () {
-      $rootScope.$broadcast('NsfwManager.Update', _nsfw);
+    var broadcastNsfw = function (nsfw) {
+      $rootScope.$broadcast('NsfwManager.Update', nsfw);
     };
 
     var toggleNsfw = function () {
       _nsfw = !_nsfw;
-      broadcastNsfw();
+      broadcastNsfw(_nsfw);
+      console.log('broadcasting');
     };
 
     return {
