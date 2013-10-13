@@ -18,17 +18,29 @@ angular.module('repicbro.services')
       $rootScope.$broadcast('PostsManager.CurrentUpdate', current);
     };
 
-    var next = function () {
-      current = loaded[++index];
-      broadcastCurrentUpdate(current);
+    var updateIndex = function (newIndex, callback) {
+      var p = loaded[newIndex];
+      if (p) {
+        current = p;
+        index = newIndex;
+        broadcastCurrentUpdate(current);
 
-      checkSize();
-      maybeLoad();
+        if (callback) {
+          callback();
+        }
+      }
     };
 
+    var next = function () {
+      updateIndex(index+1, function () {
+        checkSize();
+        maybeLoad();
+      });
+    };
+
+
     var prev = function () {
-      current = loaded[--index];
-      broadcastCurrentUpdate(current);
+      updateIndex(index-1);
     };
 
     var checkSize = function () {
