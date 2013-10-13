@@ -30,9 +30,11 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
 
           <ul class="nav navbar-nav">
-            <li><a href="" class="repicbro-link-thats-not-a-link">Reddit Picture Browsing</a></li>
             <li class="dropdown">
-              <a data-toggle="modal" href="#aboutModal">Cheat sheet</a>
+              <a data-toggle="modal" href="#aboutModal">About</a>
+            </li>
+            <li class="dropdown">
+              <a data-toggle="modal" href="#cheatsheetModal">Cheat sheet</a>
             </li>
             <li><a ng-click="toggleNsfw()" ng-href="" ng-class="{'nsfw-on': nsfw}" href="">NSFW</a></li>
           </ul>
@@ -49,8 +51,9 @@
       </div>
     </nav>
 
-    <!-- Include modal for 'about' info -->
+    <!-- Include modal for 'about' info and cheatsheet -->
     <div ng-include=" '/views/modal-about.html' "></div>
+    <div ng-include=" '/views/modal-cheatsheet.html' "></div>
 
     <div class="container content" ng-view=""></div>
 
