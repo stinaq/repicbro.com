@@ -4,8 +4,8 @@
       <div class="col-md-12 repicbro-title">
         <h3>
           <a target="_blank"
-             ng-href="{{ post | permalink }}"
-             ng-bind-html="trustedHtml(post)">
+             ng-href="{{ post | permalink }}">
+               {{ trustedHtml(post) }}
           </a>
         </h3>
       </div>
