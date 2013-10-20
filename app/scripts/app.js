@@ -9,7 +9,8 @@ angular.module('repicbro', ['repicbro.controllers',
     $locationProvider.html5Mode(true);
     $routeProvider
       .when('/', {
-        redirectTo: '/r/' + constants.subreddits[0]
+        templateUrl: '/views/start.html',
+        controller: 'MainCtrl'
       })
       .when('/r/:subreddit', {
         templateUrl: '/views/main.html',
