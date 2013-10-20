@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="jumbotron">
+        <h2>Welcome to repicbro!</h2>
+        <h4>The one Reddit Picture Browser</h4>
+        <p>
+          An eazy, breezy way to browse pictures from Reddit. Just choose a subreddit and use your arrow keys to flip through images.
+        </p>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Choose a subreddit</div>
+        <div class="panel-body">
+          <div class="form-group">
+            <input type="text" class="form-control" id="chooseSubreddit" placeholder="Enter a subreddit">
+          </div>
+          <p>Or choose from the ones below:</p>
+        </div>
+
+        <!-- List group -->
+        <ul class="list-group">
+
+          <li class="list-group-item"
+            ng-repeat="subreddit in subreddits"
+            >
+            <a ng-href="{{ subreddit | suburl }}">{{ subreddit }}</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

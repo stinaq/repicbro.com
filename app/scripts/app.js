@@ -10,7 +10,7 @@ angular.module('repicbro', ['repicbro.controllers',
     $routeProvider
       .when('/', {
         templateUrl: '/views/start.html',
-        controller: 'MainCtrl'
+        controller: 'StartCtrl'
       })
       .when('/r/:subreddit', {
         templateUrl: '/views/main.html',
