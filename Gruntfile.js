@@ -58,7 +58,7 @@ module.exports = function (grunt) {
             return [
               lrSnippet,
               modRewrite([
-                '!\\.html|\\.js|\\.css|\\.swf|\\.jp(e?)g|\\.png|\\.gif$ /index.html'
+                '!\\.html|\\.js|\\.css|\\.swf|\\.jp(e?)g|\\.png|\\.gif|!\\.woff|!\\.svg$ /index.html'
               ]),
               mountFolder(connect, '.tmp'),
               mountFolder(connect, yeomanConfig.app)
