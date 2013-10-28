@@ -43,6 +43,52 @@ h1,h2,h3,h4,h5,h6{
   font-family: 'Raleway-Light', Helvetica, Arial, sans-serif;
 }
 
+.repicbro-start-container{
+  a{
+    color: darken($text-color,20);
+    text-decoration: underline;
+    &:hover{
+      text-decoration: none;
+      color: darken($text-color,10);
+    }
+  }
+  padding-left: 0;
+  padding-right: 0;
+  .repicbro-start-jumbotron{
+    background: lighten($background-gray,10);
+    color: $text-color;
+    border: 1px solid lighten($background-gray,30);
+    h1{
+      margin-top: 0;
+    }
+  }
+  .panel-default{
+    border: 1px solid lighten($background-gray,30);
+    color: $text-color;
+    &.panel{
+      background: lighten($background-gray,10);
+      .panel-body{
+        p{
+          margin-bottom: 0;
+        }
+      }
+      .panel-heading{
+        background: lighten($background-gray,5);
+        color: $text-color;
+        border-color: lighten($background-gray,30)
+      }
+      .list-group-item{
+        background: lighten($background-gray,10);
+        border-color: lighten($background-gray,30)
+      }
+    }
+  }
+  .form-control{
+    // background: lighten($background-gray,60);
+  }
+}
+
+
 .repicbro-main-container{
   margin-top: -30px;
 }
