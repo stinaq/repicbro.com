@@ -7,21 +7,94 @@ $text-color:                    #F2F2F2;
 
 
 // ======================================
+//         FONTFACE
+// ======================================
+
+// @font-face {
+//     font-family: 'ralewaybold';
+//     src: url('Raleway-Bold-webfont.eot');
+//     src:
+//         url('../fonts/raleway/Raleway-Bold-webfont.svg#ralewaybold') format('svg'),
+//         url('../fonts/raleway/Raleway-Bold-webfont.woff') format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+@font-face {
+    font-family: 'Raleway-Light';
+    src: url('fonts/Raleway-Light.ttf#Raleway-Light');
+}
+
+// @import url(http://fonts.googleapis.com/css?family=Raleway);
+
+// @include font-face("ralewaylight", font-files("fonts/Raleway-Light-webfont.woff", "fonts/Raleway-Light-webfont.ttf", "fonts/Raleway-Light-webfont.svg"), "fonts/Raleway-Light-webfont.eot");
+
+
+// ======================================
 //         CUSTOM
 // ======================================
 
 body {
   background: lighten($background-gray,3);
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
+
 }
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Raleway-Light', Helvetica, Arial, sans-serif;
+}
+
+.repicbro-start-container{
+  a{
+    color: darken($text-color,20);
+    text-decoration: underline;
+    &:hover{
+      text-decoration: none;
+      color: darken($text-color,10);
+    }
+  }
+  padding-left: 0;
+  padding-right: 0;
+  .repicbro-start-jumbotron{
+    background: lighten($background-gray,10);
+    color: $text-color;
+    border: 1px solid lighten($background-gray,30);
+    h1{
+      margin-top: 0;
+    }
+  }
+  .panel-default{
+    border: 1px solid lighten($background-gray,30);
+    color: $text-color;
+    &.panel{
+      background: lighten($background-gray,10);
+      .panel-body{
+        p{
+          margin-bottom: 0;
+        }
+      }
+      .panel-heading{
+        background: lighten($background-gray,5);
+        color: $text-color;
+        border-color: lighten($background-gray,30)
+      }
+      .list-group-item{
+        background: lighten($background-gray,10);
+        border-color: lighten($background-gray,30)
+      }
+    }
+  }
+  .form-control{
+    // background: lighten($background-gray,60);
+  }
+}
+
 
 .repicbro-main-container{
   margin-top: -30px;
 }
 
 .repicbro-nav-select{
-  width: 200px;
+  width: 212px;
   margin-top: 10px;
   background: $background-gray;
   color: darken($text-color, 20);
