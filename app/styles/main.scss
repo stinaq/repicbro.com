@@ -41,8 +41,13 @@ h1,h2,h3,h4,h5,h6,body,p{
     background: lighten($background-gray,10);
     color: $text-color;
     border: 1px solid lighten($background-gray,30);
+    p{
+      font-size: 19px;
+    }
     h1{
       margin-top: 0;
+      margin-bottom: 30px;
+      font-size: 55px;
     }
   }
   .panel-default{
