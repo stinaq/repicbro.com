@@ -10,7 +10,12 @@ $text-color:                    #F2F2F2;
 //         FONTFACE
 // ======================================
 
-@import url(http://fonts.googleapis.com/css?family=Raleway);
+//@import url(http://fonts.googleapis.com/css?family=Raleway);
+
+@font-face {
+    font-family: 'Raleway-Light';
+    src: url('fonts/Raleway-Light.ttf#Raleway-Light');
+}
 
 
 // ======================================
@@ -23,7 +28,7 @@ body {
 
 }
 h1,h2,h3,h4,h5,h6,body,p{
-  font-family: 'Raleway', Helvetica, Arial, sans-serif;
+  font-family: 'Raleway-Light', Helvetica, Arial, sans-serif;
 }
 
 .container{
