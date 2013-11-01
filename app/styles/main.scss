@@ -10,24 +10,7 @@ $text-color:                    #F2F2F2;
 //         FONTFACE
 // ======================================
 
-// @font-face {
-//     font-family: 'ralewaybold';
-//     src: url('Raleway-Bold-webfont.eot');
-//     src:
-//         url('../fonts/raleway/Raleway-Bold-webfont.svg#ralewaybold') format('svg'),
-//         url('../fonts/raleway/Raleway-Bold-webfont.woff') format('woff');
-//     font-weight: normal;
-//     font-style: normal;
-// }
-
-@font-face {
-    font-family: 'Raleway-Light';
-    src: url('fonts/Raleway-Light.ttf#Raleway-Light');
-}
-
-// @import url(http://fonts.googleapis.com/css?family=Raleway);
-
-// @include font-face("ralewaylight", font-files("fonts/Raleway-Light-webfont.woff", "fonts/Raleway-Light-webfont.ttf", "fonts/Raleway-Light-webfont.svg"), "fonts/Raleway-Light-webfont.eot");
+@import url(http://fonts.googleapis.com/css?family=Raleway);
 
 
 // ======================================
@@ -39,8 +22,8 @@ body {
   color: #333;
 
 }
-h1,h2,h3,h4,h5,h6{
-  font-family: 'Raleway-Light', Helvetica, Arial, sans-serif;
+h1,h2,h3,h4,h5,h6,body,p{
+  font-family: 'Raleway', Helvetica, Arial, sans-serif;
 }
 
 .repicbro-start-container{
