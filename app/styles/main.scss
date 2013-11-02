@@ -10,24 +10,12 @@ $text-color:                    #F2F2F2;
 //         FONTFACE
 // ======================================
 
-// @font-face {
-//     font-family: 'ralewaybold';
-//     src: url('Raleway-Bold-webfont.eot');
-//     src:
-//         url('../fonts/raleway/Raleway-Bold-webfont.svg#ralewaybold') format('svg'),
-//         url('../fonts/raleway/Raleway-Bold-webfont.woff') format('woff');
-//     font-weight: normal;
-//     font-style: normal;
-// }
+//@import url(http://fonts.googleapis.com/css?family=Raleway);
 
 @font-face {
     font-family: 'Raleway-Light';
     src: url('fonts/Raleway-Light.ttf#Raleway-Light');
 }
-
-// @import url(http://fonts.googleapis.com/css?family=Raleway);
-
-// @include font-face("ralewaylight", font-files("fonts/Raleway-Light-webfont.woff", "fonts/Raleway-Light-webfont.ttf", "fonts/Raleway-Light-webfont.svg"), "fonts/Raleway-Light-webfont.eot");
 
 
 // ======================================
@@ -39,8 +27,13 @@ body {
   color: #333;
 
 }
-h1,h2,h3,h4,h5,h6{
+h1,h2,h3,h4,h5,h6,body,p{
   font-family: 'Raleway-Light', Helvetica, Arial, sans-serif;
+}
+
+.container{
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .repicbro-start-container{
@@ -52,14 +45,19 @@ h1,h2,h3,h4,h5,h6{
       color: darken($text-color,10);
     }
   }
-  padding-left: 0;
-  padding-right: 0;
+
+  // padding-right: 0;
   .repicbro-start-jumbotron{
     background: lighten($background-gray,10);
     color: $text-color;
     border: 1px solid lighten($background-gray,30);
+    p{
+      font-size: 19px;
+    }
     h1{
       margin-top: 0;
+      margin-bottom: 30px;
+      font-size: 55px;
     }
   }
   .panel-default{
@@ -94,7 +92,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .repicbro-nav-select{
-  width: 212px;
+  width: 220px;
   margin-top: 10px;
   background: $background-gray;
   color: darken($text-color, 20);
