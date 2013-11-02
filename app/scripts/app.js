@@ -5,7 +5,7 @@ angular.module('repicbro', ['repicbro.controllers',
                             'repicbro.filters',
                             'ngRoute',
                             'ngTouch'])
-  .config(function ($routeProvider, $locationProvider, constants) {
+  .config(function ($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
     $routeProvider
       .when('/', {

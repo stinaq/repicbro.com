@@ -32,9 +32,11 @@ angular.module('repicbro.controllers')
       $scope.nsfw = nsfw;
     });
 
+    /* jshint camelcase: false */
     $scope.showNsfw = function () {
       return !$scope.current.over_18 || $scope.nsfw;
     };
+    /* jshint camelcase: true */
 
     $scope.trustedHtml = function (post) {
       return $sce.trustAsHtml(post.title);
