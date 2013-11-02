@@ -38,10 +38,6 @@ angular.module('repicbro.controllers')
     };
     /* jshint camelcase: true */
 
-    $scope.trustedHtml = function (post) {
-      return $sce.trustAsHtml(post.title);
-    };
-
     $(window).keydown(function (e) {
       if(e.which === 37 || e.which === 75) {
         $scope.prev();
