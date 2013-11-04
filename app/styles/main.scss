@@ -94,6 +94,9 @@ h1,h2,h3,h4,h5,h6,body,p{
     color: $text-color;
     h3{
       display: inline-block;
+      margin-right: 20px;
+      margin-left: 20px;
+      max-width: 80%;
     }
     a{
       color: $text-color;
@@ -102,16 +105,32 @@ h1,h2,h3,h4,h5,h6,body,p{
         color: darken($text-color, 20);
       }
     }
-    .prev{
-      margin-right: 20px;
+    .repicbro-flip{
+      padding: 7px 8px 2px 8px;
       position: relative;
-      top: -1px;
+      top: -2px;
+      border: 1px solid lighten($background-gray,20);
+      background: lighten($background-gray,5);
+      display: inline-block;
+      color: darken($text-color,40);
+      border-radius: 5px;
+      cursor: pointer;
+      &:hover{
+        background: lighten($background-gray,10);
+        color: darken($text-color,30);
+      }
+      .prev{
+
+        // position: relative;
+        // top: -1px;
+      }
+      .next{
+
+        // position: relative;
+        // top: -1px;
+      }
     }
-    .next{
-      margin-left: 20px;
-      position: relative;
-      top: -1px;
-    }
+
   }
 }
 
