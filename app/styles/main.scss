@@ -89,7 +89,32 @@ h1,h2,h3,h4,h5,h6,body,p{
 
 .repicbro-main-container{
   margin-top: -30px;
+  .repicbro-title{
+    text-align: center;
+    color: $text-color;
+    h3{
+      display: inline-block;
+    }
+    a{
+      color: $text-color;
+      &:hover{
+        text-decoration: none;
+        color: darken($text-color, 20);
+      }
+    }
+    .prev{
+      margin-right: 20px;
+      position: relative;
+      top: -1px;
+    }
+    .next{
+      margin-left: 20px;
+      position: relative;
+      top: -1px;
+    }
+  }
 }
+
 
 .repicbro-nav-select{
   width: 220px;
@@ -113,16 +138,7 @@ h1,h2,h3,h4,h5,h6,body,p{
   }
 }
 
-.repicbro-title{
-  text-align: center;
-  a{
-    color: $text-color;
-    &:hover{
-      text-decoration: none;
-      color: darken($text-color, 20);
-    }
-  }
-}
+
 
 img.repicbro-image{
   margin: 0 auto 40px auto;
