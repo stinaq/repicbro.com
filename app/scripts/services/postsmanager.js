@@ -3,6 +3,7 @@
 angular.module('repicbro.services')
   .factory('PostsManager',
            function ($rootScope,
+                     $sce,
                      Posts,
                      Helpers) {
 
@@ -19,9 +20,9 @@ angular.module('repicbro.services')
     };
 
     var updateIndex = function (newIndex, callback) {
-      var p = loaded[newIndex];
-      if (p) {
-        current = p;
+      var post = loaded[newIndex];
+      if (post) {
+        current = post;
         index = newIndex;
         broadcastCurrentUpdate(current);
 
@@ -61,6 +62,7 @@ angular.module('repicbro.services')
           var post = p.data;
           if (!Helpers.blacklisted(post)) {
             Helpers.rewritePictureUrl(post);
+            post.title = $sce.trustAsHtml(post.title);
             posts.push(post);
           }
         });
