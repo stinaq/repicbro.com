@@ -5,14 +5,18 @@
     <div ng-show="isCurrent(post)">
       <div class="row">
         <div class="col-md-12 repicbro-title">
+          <div ng-click="prev()" class="repicbro-flip">
             <span class="glyphicon glyphicon-chevron-left prev"></span>
+          </div>
           <h3>
             <a target="_blank"
                ng-href="{{ post | permalink }}"
                ng-bind-html="post.title">
             </a>
           </h3>
+          <div ng-click="next()" class="repicbro-flip">
             <span class="glyphicon glyphicon-chevron-right next"></span>
+          </div>
         </div>
       </div>
       <div class="row">
