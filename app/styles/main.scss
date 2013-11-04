@@ -45,8 +45,6 @@ h1,h2,h3,h4,h5,h6,body,p{
       color: darken($text-color,10);
     }
   }
-
-  // padding-right: 0;
   .repicbro-start-jumbotron{
     background: lighten($background-gray,10);
     color: $text-color;
@@ -81,11 +79,7 @@ h1,h2,h3,h4,h5,h6,body,p{
       }
     }
   }
-  .form-control{
-    // background: lighten($background-gray,60);
-  }
 }
-
 
 .repicbro-main-container{
   margin-top: -30px;
@@ -119,21 +113,9 @@ h1,h2,h3,h4,h5,h6,body,p{
         background: lighten($background-gray,10);
         color: darken($text-color,30);
       }
-      .prev{
-
-        // position: relative;
-        // top: -1px;
-      }
-      .next{
-
-        // position: relative;
-        // top: -1px;
-      }
     }
-
   }
 }
-
 
 .repicbro-nav-select{
   width: 220px;
@@ -141,7 +123,6 @@ h1,h2,h3,h4,h5,h6,body,p{
   background: $background-gray;
   color: darken($text-color, 20);
   border-color: lighten($background-gray, 30);
-
 }
 
 @media (max-width: 767px){
@@ -156,8 +137,6 @@ h1,h2,h3,h4,h5,h6,body,p{
     color: #999;
   }
 }
-
-
 
 img.repicbro-image{
   margin: 0 auto 40px auto;
