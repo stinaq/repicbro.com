@@ -3,23 +3,31 @@
      ng-swipe-left="next()">
   <div class="row" ng-repeat="post in posts">
     <div ng-show="isCurrent(post)">
-      <div class="col-md-12 repicbro-title">
-        <h3>
-          <a target="_blank"
-             ng-href="{{ post | permalink }}"
-             ng-bind-html="post.title">
-          </a>
-        </h3>
+      <div class="row">
+        <div class="col-md-12 repicbro-title">
+          <span class="glyphicon glyphicon-chevron-left prev"></span>
+          <h3>
+            <a target="_blank"
+               ng-href="{{ post | permalink }}"
+               ng-bind-html="post.title">
+            </a>
+          </h3>
+          <span class="glyphicon glyphicon-chevron-right next"></span>
+        </div>
       </div>
-      <div class="col-md-12">
-        <div>
-          <img class="repicbro-image"
-               ng-src="{{ post.url }}"
-               ng-show="showNsfw(post)"
-               onerror="this.src='/images/404.png';">
-          <img class="repicbro-image"
-               ng-src="/images/nsfw.png"
-               ng-hide="showNsfw(post)">
+      <div class="row">
+        <div class="col-md-12">
+          <div>
+            <img class="repicbro-image"
+                 ng-src="{{ post.url }}"
+                 ng-show="showNsfw(post)"
+                 onerror="this.src='/images/404.png';">
+            <img class="repicbro-image"
+                 ng-src="/images/nsfw.png"
+                 ng-hide="showNsfw(post)">
+          </div>
+        </div>
+      </div>
         </div>
       </div>
     </div>
