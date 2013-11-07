@@ -86,6 +86,8 @@ h1,h2,h3,h4,h5,h6,body,p{
   .repicbro-title{
     text-align: center;
     color: $text-color;
+    margin-right: 0px;
+    margin-left: 0px;
     h3{
       display: inline-block;
       margin-top: 0;
@@ -102,6 +104,7 @@ h1,h2,h3,h4,h5,h6,body,p{
     }
     .repicbro-flip{
       padding: 7px 8px 2px 8px;
+      width: 100%;
       margin-bottom: 10px;
       position: relative;
       top: -2px;
@@ -114,6 +117,9 @@ h1,h2,h3,h4,h5,h6,body,p{
       &:hover{
         background: lighten($background-gray,10);
         color: darken($text-color,30);
+      }
+      .next{
+
       }
     }
   }
