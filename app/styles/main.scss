@@ -82,12 +82,13 @@ h1,h2,h3,h4,h5,h6,body,p{
 }
 
 .repicbro-main-container{
-  margin-top: -30px;
+  // margin-top: -30px;
   .repicbro-title{
     text-align: center;
     color: $text-color;
     h3{
       display: inline-block;
+      margin-top: 0;
       margin-right: 20px;
       margin-left: 20px;
       max-width: 80%;
@@ -101,6 +102,7 @@ h1,h2,h3,h4,h5,h6,body,p{
     }
     .repicbro-flip{
       padding: 7px 8px 2px 8px;
+      margin-bottom: 10px;
       position: relative;
       top: -2px;
       border: 1px solid lighten($background-gray,20);
