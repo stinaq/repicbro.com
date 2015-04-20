@@ -41,6 +41,7 @@
             <video ng-if="post.isGifv && isCurrent(post)"
                    poster="{{ post.gifv.jpg }}"
                    preload="auto"
+                   ng-show="showNsfw(post)"
                    autoplay="autoplay"
                    muted="muted" loop="loop"
                    webkit-playsinline="">
