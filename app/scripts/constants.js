@@ -16,6 +16,8 @@ angular.module('repicbro.constants')
       'aww',
       'earthporn',
       'roomporn',
+      'animalporn',
+      'historyporn',
       'adviceanimals',
       'minecraft',
       'perfectloops'
