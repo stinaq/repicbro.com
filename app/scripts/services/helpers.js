@@ -18,8 +18,21 @@ angular.module('repicbro.services')
       });
     };
 
+    var rewriteGifv = function (post) {
+      if (post.url.match('.gifv')) {
+        post.isGifv = true;
+        var fileName = post.url.split('://')[1].split('.gifv')[0];
+        post.gifv = {
+          mp4: '//' + fileName + '.mp4',
+          webm: '//' + fileName + '.webm',
+          jpg: '//' + fileName + 'h.jpg'
+        };
+      }
+    };
+
     return {
       rewritePictureUrl: rewritePictureUrl,
-      blacklisted: blacklisted
+      blacklisted: blacklisted,
+      rewriteGifv: rewriteGifv
     };
   });

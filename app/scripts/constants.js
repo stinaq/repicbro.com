@@ -7,6 +7,7 @@ angular.module('repicbro.constants')
       /imgur\.com\/gallery/,
       /imgur\.com\/a\//,
       /www\.reddit\.com/,
+      /www\.youtube\.com/,
       /www\.flickr\.com/
     ],
     'subreddits': [
@@ -15,6 +16,10 @@ angular.module('repicbro.constants')
       'gifs',
       'aww',
       'earthporn',
+      'roomporn',
+      'animalporn',
+      'historyporn',
+      'spaceporn',
       'adviceanimals',
       'minecraft',
       'perfectloops'

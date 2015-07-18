@@ -36,7 +36,9 @@
             <li class="dropdown">
               <a data-toggle="modal" href="#cheatsheetModal">Cheat sheet</a>
             </li>
-            <li><a ng-click="toggleNsfw()" ng-href="" ng-class="{'nsfw-on': nsfw}" href="">NSFW</a></li>
+            <li>
+              <a ng-click="toggleNsfw()" ng-href="" ng-class="{'nsfw-on': nsfw}" href="">NSFW</a>
+            </li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
@@ -77,6 +79,7 @@
     <script src="/scripts/app.js"></script>
     <script src="/scripts/constants.js"></script>
     <script src="/scripts/filters/permalink.js"></script>
+    <script src="/scripts/filters/trustedUrl.js"></script>
     <script src="/scripts/filters/suburl.js"></script>
     <script src="/scripts/services/posts.js"></script>
     <script src="/scripts/services/postsmanager.js"></script>

@@ -62,6 +62,7 @@ angular.module('repicbro.services')
           var post = p.data;
           if (!Helpers.blacklisted(post)) {
             Helpers.rewritePictureUrl(post);
+            Helpers.rewriteGifv(post);
             post.title = $sce.trustAsHtml(post.title);
             posts.push(post);
           }

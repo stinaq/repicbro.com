@@ -31,12 +31,37 @@
         <div class="col-md-12">
           <div>
             <img class="repicbro-image"
+                 ng-if="!post.isGifv"
                  ng-src="{{ post.url }}"
                  ng-show="showNsfw(post)"
                  onerror="this.src='/images/404.png';">
             <img class="repicbro-image"
                  ng-src="/images/nsfw.png"
                  ng-hide="showNsfw(post)">
+            <video ng-if="post.isGifv && isCurrent(post)"
+                   poster="{{ post.gifv.jpg }}"
+                   preload="auto"
+                   ng-show="showNsfw(post)"
+                   autoplay="autoplay"
+                   muted="muted" loop="loop"
+                   webkit-playsinline="">
+                <source ng-src="{{ post.gifv.webm | trustedUrl }}" type="video/webm">
+                <source ng-src="{{ post.gifv.mp4 | trustedUrl }}" type="video/mp4">
+
+                <object style="width: 718px; height: 404px"
+                        type="application/x-shockwave-flash" 
+                        data="//s.imgur.com/include/flash/gifplayer.swf?imgur_video=http:{{ post.gifv.mp4}}&amp;imgur_width=718&amp;imgur_height=404&amp;imgur_url=">
+                    <param name="movie"value="//s.imgur.com/include/flash/gifplayer.swf?imgur_video=http:{{  post.gifv.mp4 }}&amp;imgur_width=718&amp;imgur_height=404">
+                    <param name="allowscriptaccess" value="never">
+                    <param name="flashvars" value="height=404&amp;width=718">
+                    <param name="width" value="718">
+                    <param name="height" value="404">
+                    <param name="version" value="0">
+                    <param name="scale" value="scale">
+                    <param name="salign" value="tl">
+                    <param name="wmode" value="opaque">
+                </object>
+            </video>
           </div>
         </div>
       </div>
