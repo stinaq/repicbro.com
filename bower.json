@@ -1,6 +1,6 @@
 {
   "name": "repicbro",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "dependencies": {
     "angular": "1.2.0-rc.2",
     "jquery": "~2.0.3",
