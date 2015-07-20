@@ -39,6 +39,9 @@
             <li>
               <a ng-click="toggleNsfw()" ng-href="" ng-class="{'nsfw-on': nsfw}" href="">NSFW</a>
             </li>
+            <li>
+              <a ng-click="copyInfo()" data-toggle="modal" href="#sharePost">Copy post</a>
+            </li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
@@ -56,6 +59,7 @@
     <!-- Include modal for 'about' info and cheatsheet -->
     <div ng-include=" '/views/modal-about.html' "></div>
     <div ng-include=" '/views/modal-cheatsheet.html' "></div>
+    <div ng-include=" '/views/modal-share.html' "></div>
 
     <div class="container content" ng-view=""></div>
 
