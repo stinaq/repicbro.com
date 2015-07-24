@@ -4,7 +4,8 @@ angular.module('repicbro', ['repicbro.controllers',
                             'repicbro.services',
                             'repicbro.filters',
                             'ngRoute',
-                            'ngTouch'])
+                            'ngTouch',
+                            'ui.bootstrap'])
   .config(function ($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
     $routeProvider
