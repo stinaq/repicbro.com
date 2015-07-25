@@ -1,6 +1,9 @@
 <div class="container repicbro-main-container"
      ng-swipe-right="prev()"
      ng-swipe-left="next()">
+  <div class="waiter" ng-show="posts.length === 0">
+    <i class="fa fa-spinner fa-pulse"></i>
+  </div>
   <div class="row" ng-repeat="post in posts">
     <div ng-show="isCurrent(post)">
       <div class="row repicbro-title">
@@ -16,13 +19,13 @@
 
         <div class="col-md-1 col-md-pull-10 col-xs-6">
           <div ng-click="prev()" class="repicbro-flip">
-            <span class="glyphicon glyphicon-chevron-left prev"></span>
+            <i class="fa fa-arrow-left"></i>
           </div>
         </div>
 
         <div class="col-md-1 col-xs-6">
           <div ng-click="next()" class="repicbro-flip">
-            <span class="glyphicon glyphicon-chevron-right next"></span>
+            <i class="fa fa-arrow-right"></i>
           </div>
         </div>
       </div>
