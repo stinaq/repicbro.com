@@ -25,8 +25,8 @@ $text-color:                    #F2F2F2;
 body {
   background: lighten($background-gray,3);
   color: #333;
-
 }
+
 h1,h2,h3,h4,h5,h6,body,p{
   font-family: 'Raleway-Light', Helvetica, Arial, sans-serif;
 }
@@ -40,24 +40,14 @@ h1,h2,h3,h4,h5,h6,body,p{
   a{
     color: darken($text-color,20);
     text-decoration: underline;
+
     &:hover{
       text-decoration: none;
       color: darken($text-color,10);
     }
   }
-  .repicbro-start-jumbotron{
-    background: lighten($background-gray,10);
-    color: $text-color;
-    border: 1px solid lighten($background-gray,30);
-    p{
-      font-size: 19px;
-    }
-    h1{
-      margin-top: 0;
-      margin-bottom: 30px;
-      font-size: 55px;
-    }
-  }
+
+
   .panel-default{
     border: 1px solid lighten($background-gray,30);
     color: $text-color;
@@ -81,47 +71,58 @@ h1,h2,h3,h4,h5,h6,body,p{
   }
 }
 
-.repicbro-main-container{
-  // margin-top: -30px;
-  .repicbro-title{
-    text-align: center;
-    color: $text-color;
-    margin-right: 0px;
-    margin-left: 0px;
-    h3{
-      display: inline-block;
-      margin-top: 0;
-      margin-right: 20px;
-      margin-left: 20px;
-      max-width: 80%;
-    }
-    a{
-      color: $text-color;
-      &:hover{
-        text-decoration: none;
-        color: darken($text-color, 20);
-      }
-    }
-    .repicbro-flip{
-      padding: 7px 8px 2px 8px;
-      width: 100%;
-      margin-bottom: 10px;
-      position: relative;
-      top: -2px;
-      border: 1px solid lighten($background-gray,20);
-      background: lighten($background-gray,5);
-      display: inline-block;
-      color: darken($text-color,40);
-      border-radius: 5px;
-      cursor: pointer;
-      &:hover{
-        background: lighten($background-gray,10);
-        color: darken($text-color,30);
-      }
-      .next{
+.repicbro-start-jumbotron{
+  background: lighten($background-gray,10);
+  color: $text-color;
+  border: 1px solid lighten($background-gray,30);
+  p{
+    font-size: 19px;
+  }
+  h1{
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 55px;
+  }
+}
 
-      }
+.repicbro-title{
+  text-align: center;
+  color: $text-color;
+  margin-right: 0px;
+  margin-left: 0px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+
+  h3{
+    display: inline-block;
+    max-width: 80%;
+    margin: 0;
+  }
+
+  a{
+    color: $text-color;
+    &:hover{
+      text-decoration: none;
+      color: darken($text-color, 20);
     }
+  }
+}
+
+.repicbro-flip{
+    padding: 7px 8px;
+  width: 100%;
+  position: relative;
+  border: 1px solid lighten($background-gray,20);
+  background: lighten($background-gray,5);
+  display: inline-block;
+  color: darken($text-color,40);
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover{
+    background: lighten($background-gray,10);
+    color: darken($text-color,30);
   }
 }
 
