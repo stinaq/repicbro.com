@@ -15,17 +15,12 @@ angular.module('repicbro.controllers')
 
     PostsManager.initialize($scope.subreddit);
     $scope.posts = PostsManager.posts;
-    $scope.current = PostsManager.current;
-
-    $scope.$on('PostsManager.CurrentUpdate', function (event, post) {
-      $scope.current = post;
-    });
 
     $scope.next = PostsManager.next;
     $scope.prev = PostsManager.prev;
 
     $scope.isCurrent = function (post) {
-      return angular.equals($scope.current, post);
+      return angular.equals(PostsManager.current.post, post);
     };
 
     $scope.$on('NsfwManager.Update', function (event, nsfw) {
@@ -34,7 +29,7 @@ angular.module('repicbro.controllers')
 
     /* jshint camelcase: false */
     $scope.showNsfw = function () {
-      return !$scope.current.over_18 || $scope.nsfw;
+      return !PostsManager.current.post.over_18 || $scope.nsfw;
     };
     /* jshint camelcase: true */
 

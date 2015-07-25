@@ -5,7 +5,8 @@ angular.module('repicbro.controllers')
               function ($scope,
                         $location,
                         NsfwManager,
-                        Subreddits) {
+                        Subreddits,
+                        $modal) {
     $scope.subreddits = Subreddits.list;
     $scope.subreddit = Subreddits.current;
     $scope.$on('Subreddits.CurrentUpdate', function (event, subreddit) {
@@ -22,4 +23,12 @@ angular.module('repicbro.controllers')
     });
 
     $scope.toggleNsfw = NsfwManager.toggleNsfw;
+
+    $scope.openShareModal = function () {
+      var modalInstance = $modal.open({
+        animation: true,
+        templateUrl: '/views/shareModal.html',
+        controller: 'ShareModalCtrl'
+      });
+    };
   });

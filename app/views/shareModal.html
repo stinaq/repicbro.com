@@ -1,0 +1,18 @@
+<div>
+  <div class="modal-header">
+    <h3 class="modal-title">Copy post</h3>
+  </div>
+  <div class="modal-body">
+    <p>
+      Copy the title and URL and share it with someone you like. Or not.
+    </p>
+    <div class="form-group">
+      <label for="title-and-url">Title and url</label>
+      <textarea class="form-control" rows="3" select-on-focus>{{ current.post.title }}
+{{ current.post.url }}</textarea>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+  </div>
+</div>

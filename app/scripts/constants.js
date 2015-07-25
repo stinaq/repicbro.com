@@ -13,6 +13,7 @@ angular.module('repicbro.constants')
     'subreddits': [
       'funny',
       'pics',
+      'pic',
       'gifs',
       'aww',
       'earthporn',

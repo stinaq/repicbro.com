@@ -5,6 +5,7 @@
     <title>Reddit Picture Browser</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
 
     <!-- build:css({.tmp,app}) /styles/main.css -->
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
@@ -39,6 +40,9 @@
             <li>
               <a ng-click="toggleNsfw()" ng-href="" ng-class="{'nsfw-on': nsfw}" href="">NSFW</a>
             </li>
+            <li>
+              <a class="mock-link" ng-click="openShareModal()">Copy post</a>
+            </li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
@@ -56,10 +60,11 @@
     <!-- Include modal for 'about' info and cheatsheet -->
     <div ng-include=" '/views/modal-about.html' "></div>
     <div ng-include=" '/views/modal-cheatsheet.html' "></div>
+    <div ng-include=" '/views/modal-share.html' "></div>
 
     <div class="container content" ng-view=""></div>
 
-    <script src="/bower_components/jquery/jquery.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/underscore/underscore.js"></script>
 
@@ -73,6 +78,8 @@
     <script src="/bower_components/angular-resource/angular-resource.js"></script>
     <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) /scripts/scripts.js -->
@@ -89,6 +96,8 @@
     <script src="/scripts/controllers/navigation.js"></script>
     <script src="/scripts/controllers/main.js"></script>
     <script src="/scripts/controllers/start.js"></script>
+    <script src="/scripts/controllers/shareModal.js"></script>
+    <script src="/scripts/directives/selectOnFocus.js"></script>
     <!-- endbuild -->
 
   </body>
