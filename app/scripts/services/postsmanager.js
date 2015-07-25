@@ -10,21 +10,16 @@ angular.module('repicbro.services')
     var subreddit = 'funny',
         posts     = [],
         loaded    = [],
-        current   = null,
+        current   = {},
         index     = 0,
         latest    = '',
         updating  = false;
 
-    var broadcastCurrentUpdate = function (current) {
-      $rootScope.$broadcast('PostsManager.CurrentUpdate', current);
-    };
-
     var updateIndex = function (newIndex, callback) {
       var post = loaded[newIndex];
       if (post) {
-        current = post;
+        current.post = post;
         index = newIndex;
-        broadcastCurrentUpdate(current);
 
         if (callback) {
           callback();
@@ -89,8 +84,7 @@ angular.module('repicbro.services')
           loaded.push(posts.shift());
         });
 
-        current = loaded[index];
-        broadcastCurrentUpdate(current);
+        current.post = loaded[index];
       });
     };
 

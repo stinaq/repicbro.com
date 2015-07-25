@@ -25,8 +25,6 @@ angular.module('repicbro.controllers')
     $scope.toggleNsfw = NsfwManager.toggleNsfw;
 
     $scope.openShareModal = function () {
-      console.log('hej');
-
       var modalInstance = $modal.open({
         animation: true,
         templateUrl: '/views/shareModal.html',
