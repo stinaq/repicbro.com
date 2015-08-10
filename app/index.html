@@ -15,7 +15,7 @@
   </head>
   <body ng-app="repicbro">
 
-    <nav class="navbar navbar-inverse" role="navigation" ng-controller="NavigationCtrl">
+    <nav class="navbar navbar-inverse" role="navigation" ng-controller="NavigationCtrl as navigationCtrl">
       <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -39,18 +39,18 @@
               <a data-toggle="modal" href="#cheatsheetModal">Cheat sheet</a>
             </li>
             <li>
-              <a ng-click="toggleNsfw()" ng-href="" ng-class="{'nsfw-on': nsfw}" href="">NSFW</a>
+              <a ng-click="navigationCtrl.toggleNsfw()" ng-href="" ng-class="{'nsfw-on': nsfw}" href="">NSFW</a>
             </li>
             <li>
-              <a class="mock-link" ng-click="openShareModal()">Copy post</a>
+              <a class="mock-link" ng-click="navigationCtrl.openShareModal()">Copy post</a>
             </li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
             <select class="form-control repicbro-nav-select input-sm"
-                  ng-model="subreddit"
-                  ng-options="subreddit for subreddit in subreddits"
-                  ng-change="change()">
+                  ng-model="navigationCtrl.subreddit"
+                  ng-options="subreddit for subreddit in navigationCtrl.subreddits"
+                  ng-change="navigationCtrl.changeSubreddit(navigationCtrl.subreddit)">
             </select>
           </ul>
 
