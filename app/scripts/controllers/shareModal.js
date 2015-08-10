@@ -7,8 +7,6 @@
       $modalInstance.close();
     };
 
-    // todo. create a service to get the url from. that service should be posted to from the post controller
-
     $scope.current = PostsManager.current;
   };
 

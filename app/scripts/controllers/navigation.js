@@ -34,6 +34,22 @@
         controller: 'ShareModalCtrl'
       });
     };
+
+    this.openCheatsheetModal = function () {
+      var modalInstance = $modal.open({
+        animation: true,
+        templateUrl: '/views/cheatsheetModal.html',
+        controller: 'SimpleModalCtrl'
+      });
+    };
+
+    this.openAboutModal = function () {
+      var modalInstance = $modal.open({
+        animation: true,
+        templateUrl: '/views/aboutModal.html',
+        controller: 'SimpleModalCtrl'
+      });
+    };
   };
 
   angular.module('repicbro.controllers')
