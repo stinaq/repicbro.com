@@ -1,34 +1,41 @@
 'use strict';
 
-angular.module('repicbro.controllers')
-  .controller('NavigationCtrl',
-              function ($scope,
-                        $location,
-                        NsfwManager,
-                        Subreddits,
-                        $modal) {
-    $scope.subreddits = Subreddits.list;
-    $scope.subreddit = Subreddits.current;
-    $scope.$on('Subreddits.CurrentUpdate', function (event, subreddit) {
-      $scope.subreddit = subreddit;
-    });
+(function () {
+  var NavigationCtrl = function ($scope,
+                                 $location,
+                                 $log,
+                                 NsfwManager,
+                                 Subreddits,
+                                 $modal,
+                                 PostsManager) {
+    var navigationCtrl = this;
 
-    $scope.change = function () {
-      Subreddits.updateCurrent($scope.subreddit);
-      $location.path('/r/' + $scope.subreddit);
+    this.subreddits = Subreddits.list;
+    this.subreddit = Subreddits.current;
+
+    this.changeSubreddit = function () {
+      // When a new subreddit is picked from the list, the app should initialize a new get
+      // of posts
+      PostsManager.initialize(this.subreddit);
+      $location.path('/r/' + this.subreddit);
+      $log.log('Subreddit was changed to ' + this.subreddit);
     };
 
     $scope.$on('NsfwManager.Update', function (event, nsfw) {
       $scope.nsfw = nsfw;
     });
 
-    $scope.toggleNsfw = NsfwManager.toggleNsfw;
+    this.toggleNsfw = NsfwManager.toggleNsfw;
 
-    $scope.openShareModal = function () {
+    this.openShareModal = function () {
       var modalInstance = $modal.open({
         animation: true,
         templateUrl: '/views/shareModal.html',
         controller: 'ShareModalCtrl'
       });
     };
-  });
+  };
+
+  angular.module('repicbro.controllers')
+    .controller('NavigationCtrl', NavigationCtrl);
+})();
