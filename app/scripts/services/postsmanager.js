@@ -4,6 +4,7 @@ angular.module('repicbro.services')
   .factory('PostsManager',
            function ($rootScope,
                      $sce,
+                     $log,
                      Posts,
                      Helpers) {
 
