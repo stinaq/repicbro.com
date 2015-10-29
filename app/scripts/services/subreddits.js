@@ -5,6 +5,8 @@ angular.module('repicbro.services')
     var subreddits = constants.subreddits,
         current;
 
+    var current2 = {};
+
     var updateCurrent = function (subreddit) {
       if (!_.contains(subreddits, subreddit)) {
         subreddits.push(subreddit);
@@ -20,6 +22,7 @@ angular.module('repicbro.services')
     return {
       list: subreddits,
       current: current,
+      current2: current2,
       updateCurrent: updateCurrent
     };
   });

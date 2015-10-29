@@ -12,6 +12,7 @@
 
     this.subreddits = Subreddits.list;
     this.subreddit = Subreddits.current;
+    this.subreddit2 = Subreddits.current2.subreddit;
 
     this.changeSubreddit = function () {
       // When a new subreddit is picked from the list, the app should initialize a new get
