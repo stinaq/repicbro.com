@@ -54,5 +54,5 @@
   };
 
   angular.module('repicbro.controllers')
-    .controller('NavigationCtrl', NavigationCtrl);
+    .controller('NavigationCtrl', ['$scope', '$location', '$log', 'NsfwManager', 'Subreddits', '$modal', 'PostsManager',  NavigationCtrl]);
 })();
