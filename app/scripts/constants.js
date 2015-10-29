@@ -17,6 +17,7 @@ angular.module('repicbro.constants')
       'pic',
       'gifs',
       'aww',
+      'mostbeautiful',
       'earthporn',
       'roomporn',
       'animalporn',
