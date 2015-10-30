@@ -1,6 +1,6 @@
 (function () {
 'use strict';
-
+  // @ngInject
   var SimpleModalCtrl = function ($modalInstance, $scope) {
 
     $scope.ok = function () {

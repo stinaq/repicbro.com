@@ -258,7 +258,10 @@ module.exports = function (grunt) {
         html: ['<%= yeoman.dist %>/*.html']
       }
     },
-    ngmin: {
+    ngAnnotate: {
+      options: {
+        singleQuotes: true,
+      },
       dist: {
         files: [{
           expand: true,
@@ -306,7 +309,7 @@ module.exports = function (grunt) {
     'concat',
     'copy',
     'cdnify',
-    'ngmin',
+    'ngAnnotate',
     'cssmin',
     'uglify',
     'rev',

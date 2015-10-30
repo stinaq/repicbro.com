@@ -1,6 +1,7 @@
 'use strict';
 
 (function () {
+  // @ngInject
   var NavigationCtrl = function ($scope,
                                  $location,
                                  $log,
@@ -54,5 +55,5 @@
   };
 
   angular.module('repicbro.controllers')
-    .controller('NavigationCtrl', ['$scope', '$location', '$log', 'NsfwManager', 'Subreddits', '$modal', 'PostsManager',  NavigationCtrl]);
+    .controller('NavigationCtrl', NavigationCtrl);
 })();

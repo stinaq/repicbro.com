@@ -1,6 +1,6 @@
 (function () {
 'use strict';
-
+  // @ngInject
   var ShareModalCtrl = function ($modalInstance, $scope, PostsManager, $rootScope) {
 
     $scope.ok = function () {
